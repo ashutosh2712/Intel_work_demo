@@ -1,0 +1,10 @@
+body {
+    /* Add other styles for the body if needed */
+    margin: 0;
+    padding: 0;
+    background-image: url("{{ url_for('static', filename='img/intel-new-background.jpg') }}");
+    background-color:blanchedalmond;
+    /* Replace 'images/background.jpg' with the path to your background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
