@@ -1,3 +1,15 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.footer {
+    flex-shrink: 0;
+    
+}
+
 footer p, footer strong, footer b, footer {
     color: #b0b0b0;
 }
@@ -13,6 +25,7 @@ footer p, footer strong, footer b, footer {
     background-color: #7f7f85 !important;
     color: #b0b0b0;
     font-family: rubik;
+    
 }
 color: #99a9b5;
     padding-top: 15px;

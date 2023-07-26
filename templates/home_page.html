@@ -1,4 +1,29 @@
 {% extends 'base_page.html' %} {% block title %}Home{% endblock %} {% block
 content %}
-<h1>Wellcome to home page</h1>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+<h1>Wellcome to Intel Home page</h1>
+<img
+  src="{{ url_for('static', filename='img/Intelimg1.png')}}"
+  alt="Loading Image"
+  width="60%"
+  height="50%"
+/>
+<h3>First Image</h3>
+<img
+  src="{{ url_for('static', filename='img/Intelimg2.jpg')}}"
+  alt="Loading Image"
+  width="60%"
+  height="40%"
+/>
+<h3>second Image</h3>
+<img
+  src="{{ url_for('static', filename='img/Intelimg3.jpg')}}"
+  alt="Loading Image"
+  width="60%"
+  height="40%"
+/>
+<h3>second Image</h3>
 {% endblock %}
