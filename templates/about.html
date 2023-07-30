@@ -1,13 +1,10 @@
 {% extends "base_page.html" %}
 <title>{% block title %} About {% endblock %}</title>
-
-{% block stylessheet %}
+{% block content %}
 <link
   rel="stylesheet"
   href="{{ url_for('static', filename='css/about.css') }}"
 />
-{% endblock %} {% block content %}
-
 <h2>Wellocme to about</h2>
 
 <div class="about-section">
