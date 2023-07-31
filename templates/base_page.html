@@ -16,6 +16,16 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/base.css') }}"
     />
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community@30.0.6/dist/ag-grid-community.min.noStyle.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/ag-grid-community@30.0.6/styles/ag-grid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/ag-grid-community@30.0.6/styles/ag-theme-alpine.css"
+    />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
@@ -177,9 +187,8 @@
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
       crossorigin="anonymous"
     ></script>
-    <script src="{{ url_for('static',filename='base.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/base.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="https://daniellaharel.com/raindrops/js/raindrops.js"></script>
   </body>
 </html>
