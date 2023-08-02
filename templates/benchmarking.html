@@ -2,6 +2,77 @@
 <title>{% block title %} Benchmark {% endblock %}</title>
 
 {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/benchmarking.css') }}"
+/>
+
 
 <h2>Wellocme to benchmarking</h2>
-{% endblock %}
+<div class="card">
+    <div class="card-header text-bg-primary mb-3">
+      Filters
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class = "col-md-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Date Filter</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+            </div>      
+            <div class = "col-md-2">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Workload</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+            </div> 
+            <div class = "col-md-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">TestCase</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+            </div> 
+            <div class = "col-md-2">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Cloud</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+            </div> 
+            <div class = "col-md-2">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Microarchitecture</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                  </div>
+            </div> 
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header text-bg-primary mb-3">
+      Highchart Visualization
+    </div>
+    <div class="card-body">
+        <div id='highchart-body'>
+            
+        </div>
+        
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header text-bg-primary mb-3">
+      Ag-grid Visualization
+    </div>
+    <div class="card-body">
+        <div id="myagGrid" class="ag-theme-alpine" style="height: 500px"></div>
+            
+        </div>
+        
+    </div>
+  </div>
+  <script src="{{ url_for('static',filename='js/benchmarking.js') }}"></script>
+  {% endblock %}
+</div>
