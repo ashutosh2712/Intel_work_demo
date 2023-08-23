@@ -1,8 +1,11 @@
 from flask import Flask
+from flask_migrate import Migrate
 from flask_mysqldb import MySQL
 from flask_sqlalchemy import SQLAlchemy
 import yaml
 from os import path
+
+db = SQLAlchemy()
 
 
 def create_app():
@@ -11,22 +14,25 @@ def create_app():
     config_file = path.join(path.dirname(__file__), "config.yaml")
     with open(config_file, "r") as file:
         config = yaml.safe_load(file)
-    # config = yaml.load(open("config.yaml"))
-    # app.config["MYSQL_HOST"] = config["mysql_host"]
-    # app.config["MYSQL_USER"] = config["mysql_user"]
-    # app.config["MYSQL_PASSWORD"] = config["mysql_password"]
-    # app.config["MYSQL_DB"] = config["mysql_db"]
 
     app.config[
         "SQLALCHEMY_DATABASE_URI"
     ] = f"mysql://{config['mysql_user']}:{config['mysql_password']}@{config['mysql_host']}/{config['mysql_db']}"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-    db = SQLAlchemy(app)
+    db.init_app(app)
     mysql = MySQL(app)
+
+    migrate = Migrate(app, db)
 
     from .views import views
 
     app.register_blueprint(views, url_prefix="/")
+
+    from .models import Workload
+
+    # create Datebase Object
+    with app.app_context():
+        db.create_all()
 
     return app
