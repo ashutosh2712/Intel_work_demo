@@ -24,25 +24,42 @@
             <div class = "col-md-2">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Workload</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <select class="form-control" id="workload-select" aria-label="Default select example" onchange="get_testcases()">
+                      {% for workload in workloads %} 
+                       <option>{{ workload }}</option>
+                      {% endfor %}
+                    </select>
                   </div>
             </div> 
             <div class = "col-md-3">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">TestCase</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <select class="form-control" id="testcase-select" aria-label="Default select example" onchange="get_cloud();get_highchart()">
+                      {% for testcase in testcases %} 
+                       <option>{{ testcase }}</option>
+                      {% endfor %}
+                    </select>
                   </div>
             </div> 
             <div class = "col-md-2">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Cloud</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                  </div>
-            </div> 
+                    <select class="form-control" id="cloud-select" aria-label="Default select example"  onchange="get_microarchitecture();get_highchart()">
+                      <option selected>select cloud</option>
+                      {% for cloud in clouds %} 
+                       <option>{{ cloud }}</option>
+                      {% endfor %}
+                    </select>
+                </div> 
+            </div>
             <div class = "col-md-2">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Microarchitecture</span>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    <select class="form-control" id="microarchitecture-select" aria-label="Default select example" onchange="get_highchart()">
+                      {% for microarchitecture in microarchitectures %} 
+                       <option>{{ microarchitecture }}</option>
+                      {% endfor %}
+                    </select>
                   </div>
             </div> 
         </div>

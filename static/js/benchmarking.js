@@ -1,3 +1,39 @@
+function get_testcases() {
+    var worklaod = document.getElementById("workload-select");
+
+    var workloadValue = worklaod.value;
+    let params = new URLSearchParams();
+    params.set('workload', workloadValue);
+    window.location.search = params.toString();
+    //console.log(workloadValue);
+}
+function get_cloud() {
+    var workload = document.getElementById("workload-select");
+    var testcase = document.getElementById('testcase-select');
+    var workloadValue = workload.value;
+    var testcaseValue = testcase.value;
+    let params = new URLSearchParams();
+    params.set('workload', workloadValue);
+    params.set('testcase', testcaseValue);
+    window.location.search = params.toString();
+    //console.log(workloadValue);
+}
+
+function get_microarchitecture() {
+    var workload = document.getElementById("workload-select");
+    var testcase = document.getElementById('testcase-select');
+    var cloud = document.getElementById('cloud-select');
+    var workloadValue = workload.value;
+    var testcaseValue = testcase.value;
+    var cloudValue = cloud.value;
+    let params = new URLSearchParams();
+    params.set('workload', workloadValue);
+    params.set('testcase', testcaseValue);
+    params.set('cloud',cloudValue);
+    window.location.search = params.toString();
+    // console.log(cloudValue);
+}
+
 
 Highcharts.chart('highchart-body', {
 
@@ -6,10 +42,6 @@ Highcharts.chart('highchart-body', {
         align: 'left'
     },
 
-    subtitle: {
-        text: 'By Job Category. Source: <a href="https://irecusa.org/programs/solar-jobs-census/" target="_blank">IREC</a>.',
-        align: 'left'
-    },
 
     yAxis: {
         title: {
